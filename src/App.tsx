@@ -1,17 +1,24 @@
-import React from 'react';
 import "./App.css";
 import { useState } from 'react';
 
 const App = () => {
-  const [selected, setSelected] = useState(false);
-  const [state, setState] = useState("Select an item");
-  const item = ["First item", "Second item", "Third item", "Fourth item", "Fifth item"];
+  const [selected, setSelected] = useState<boolean>(false);
+  const [state, setState] = useState<string>('Select an item');
+  
+  const item: string[] = [
+    'First item',
+    'Second item',
+    'Third item',
+    'Fourth item',
+    'Fifth item',
+  ];
+
   const handleShow = () => {
     setSelected(!selected);
   };
-  const thaydoi = (a) => {
+  const thaydoi = (a: string) => {
     setState(a);
-    setSelected(!selected);
+    setSelected(false);
   }
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 p-4">
